@@ -1,7 +1,7 @@
 <?php
 $base = "http://localhost:84/bolosdavovo/App/";
 $db_host = "127.0.0.1";
-$db_port = 3306;
+$db_port = 3310;
 $db_name = "bolos";
 $db_user = "root";
 $db_pwd = "";
