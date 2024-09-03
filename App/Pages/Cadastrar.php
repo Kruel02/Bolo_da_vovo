@@ -9,7 +9,7 @@ require __DIR__ . "/../Config/Config.php";
     </div>
     <div class="form-item">
         <label for="cpf-usuario">Email:</label>
-        <input type="text" name="Email" id="cpf-usuario">
+        <input type="text" name="Email" id="Email-usuario">
     </div>
     <div class="form-item">
         <label for="senha-usuario">Senha:</label>

@@ -24,10 +24,10 @@ if ($Email && $Senha) {
             // Verificando o tipo de usuário
             if ($dado['TipoUsuario'] === 'ADMIN') {
                 // Redireciona para página de administrador
-                // header('Location: admin_dashboard.php');
+                 header('Location: Area_Restrita.php');
             } else {
                 // Redireciona para página de usuário comum
-                // header('Location: user_dashboard.php');
+                 header('Location: Index.php');
             }
             exit;
         } else {

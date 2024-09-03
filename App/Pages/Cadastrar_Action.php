@@ -24,7 +24,7 @@ if ($Nome && $Email && $Senha) {
     exit;
 } else {
     header('Location: Login.php');
-    exit;
+    
 }
 
 
