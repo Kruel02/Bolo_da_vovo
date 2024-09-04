@@ -2,11 +2,11 @@
 require __DIR__ . "/../Config/Config.php";
 session_start();
 
-// Verifica se o usuário está logado e se é ADMIN
-if (!isset($_SESSION['usuariologado']) || $_SESSION['tipousuario'] !== 'ADMIN') {
-    echo "Acesso negado.";
-    exit;
-}
+// // Verifica se o usuário está logado e se é ADMIN
+// if (!isset($_SESSION['usuariologado']) || $_SESSION['tipousuario'] !== 'ADMIN') {
+//     echo "Acesso negado.";
+//     exit;
+// }
 
 // Inicializa variáveis
 $nome = '';
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Atualizar Dados</title>
 </head>
 <body>
-    <h1>Atualizar Dados - <?php echo htmlspecialchars($_SESSION['Nome'], ENT_QUOTES, 'UTF-8'); ?></h1>
+    <h1>Atualizar Dados - <?php echo htmlspecialchars($_SESSION['usuariologado'], ENT_QUOTES, 'UTF-8'); ?></h1>
 
     <form action="AtualizarDados.php" method="POST">
         <label for="Nome">Nome:</label>

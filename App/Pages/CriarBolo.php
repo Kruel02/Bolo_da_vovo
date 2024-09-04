@@ -1,9 +1,14 @@
 <?php
 require __DIR__ . "/../Config/Config.php";
+session_start();
 
-// require_once("./../Pages/Partials/Header.php");
+// Verifica se o usuário está logado e se é ADMIN
+if (!isset($_SESSION['usuariologado']) || $_SESSION['tipousuario'] !== 'ADMIN') {
+    // Se não estiver logado ou não for ADMIN, redireciona para a página inicial
+    header('Location: ./../Index.php');
+    exit;
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,52 +19,32 @@ require __DIR__ . "/../Config/Config.php";
 </head>
 <body>
     <main>
-            <form action="./CriarBolo_Action.php" method="post">
+        <h1>Criar Bolo</h1>
+        <form action="./CriarBolo_Action.php" method="post">
+            <div class="Form-item">
+                <label for="Nome-Pizza">Nome do Bolo</label>
+                <input type="text" name="Nome" id="Nome-Pizza">
+            </div>
 
+            <div class="Form-item">
+                <label for="PrecoBolo">Preço</label>
+                <input type="text" name="Preco" id="PrecoBolo">
+            </div>
 
-                <div class="Form-item" >
-                    <label for="">Nome do Bolo</label>
-                    <input type="text" name="Nome" id="Nome-Pizza">
+            <div class="Form-item">
+                <label for="Foto">Foto</label>
+                <input type="text" name="Foto" id="Foto">
+            </div>
 
-                </div>
-                <div class="Form-item" >
-                    <label for="PrecoBolo">Preço</label>
-                    <input type="text" name="Preco" id="">
+            <div class="Form-item">
+                <label for="descricao">Descrição do Bolo</label>
+                <textarea name="Descricao" id="descricao" cols="30" rows="10"></textarea>
+            </div>
 
-                </div>
-
-                <div class="Form-item" >
-                    <label for="Foto">Foto </label>
-                    <input type="text" name="Foto" id="">
-
-                </div>
-
-                <div class="Form-item" >
-                    <label for="Descrição do Bolo">Descrição</label>
-                    <textarea type="text" name="Descricao" id="descricao" cols="30" rows="30"></textarea>
-
-                </div>
-                <div>
-
-                    <input type="submit" value="Submit">
-
-                </div>
-
-
-
-            </form>
-
-
-
-
-
+            <div>
+                <input type="submit" value="Cadastrar Bolo">
+            </div>
+        </form>
     </main>
-
-
-
-
 </body>
 </html>
-
-
-

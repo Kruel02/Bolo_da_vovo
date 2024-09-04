@@ -27,7 +27,7 @@ if ($Email && $Senha) {
                  header('Location: Area_Restrita.php');
             } else {
                 // Redireciona para página de usuário comum
-                 header('Location: Index.php');
+                 header('Location: ./../Index.php');
             }
             exit;
         } else {
@@ -37,7 +37,7 @@ if ($Email && $Senha) {
         echo 'Email não encontrado.';
     }
 } else {
-    echo 'Por favor, preencha todos os campos corretamente.';
+    echo 'Por favor, preencha todos os campos corretamente.';   
 }
 ?>
 
